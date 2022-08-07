@@ -27,7 +27,7 @@ const server = app.listen(process.env.PORT, function (){
     console.log("server listening on port:", port);
 });
 
-//getting all users in the database
+//getting all users in  database
 
 app.get("/getallusers", (req, res) => {
     User.find()
@@ -51,7 +51,7 @@ app.post("/adduser", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//edit user
+//edit users
 
 app.put("/edituser/:userId", (req, res) => {
     User.findByIdAndUpdate(req.params.userId, req.body)
@@ -59,7 +59,7 @@ app.put("/edituser/:userId", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//delete user
+//delete users
 
 app.delete("deleteuser/:userId", (req, res) => {
     User.findByIdAndRemove(req.params.userId, function (err, doc){
